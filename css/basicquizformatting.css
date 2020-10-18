@@ -12,6 +12,7 @@ body{
 .question{
     font-weight: bold;
     font-style: normal;
+    font-family: Nunito;
     font-size: 30px;
     line-height: 60px;
     text-align: center;
@@ -19,6 +20,7 @@ body{
     color: #000000;
   }
 .answers {
+    font-family: Noto+Serif;
     display: flex;
     flex-direction: column;
     font-style: normal;
@@ -49,4 +51,9 @@ input[type="radio"] {
     border:1px solid #CCC;
     cursor:pointer;
     z-index:90;
+}
+img {
+  text-align:center;
+  width:20%;
+  padding-top:20px;
 }
