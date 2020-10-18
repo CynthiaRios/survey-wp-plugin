@@ -1,8 +1,3 @@
-//HTML Codes 
-<div id="quiz"></div>
-<button id="submit">Get Results</button>
-<div id="results"></div>
-
 
 var myQuestions = [
     {
@@ -15,7 +10,7 @@ var myQuestions = [
         },
         correctAnswer: 'a'
         },
-        
+
         {
         question: "What percent of those facing hunger are women and girls?",
         answers: {
@@ -26,7 +21,7 @@ var myQuestions = [
         },
         correctAnswer: 'b'
         },
-        
+
           {
         question: "On average, how many tons of food is wasted around the world annually?",
         answers: {
@@ -37,7 +32,7 @@ var myQuestions = [
         },
         correctAnswer: 'c'
         },
-        
+
          {
         question: "What Pathway to End Hunger are you most interested in learning more about?",
         answers: {
@@ -46,7 +41,7 @@ var myQuestions = [
             c: "Responding to Emergencies",
             d: "Growing the Movement"
         },
-        
+
         },
 ];
 
@@ -65,11 +60,11 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
 
         // for each question
         for(var i=0; i<questions.length; i++){
-            
+
             // first reset the list of answers
             answers = [];
 
-            
+
             for(letter in questions[i].answers){
 
                 answers.push(
@@ -94,57 +89,57 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
 
 
     function showResults(questions, quizContainer, resultsContainer){
-        
+
 
         var answerContainers = quizContainer.querySelectorAll('.answers');
-        
+
         // keep track of user's answers
         var userAnswer = '';
         var numCorrect = 0;
-        
-       
+
+
         for(var i=0; i<questions.length; i++){
-        
-       
+
+
 
             // find selected answer
             userAnswer = (answerContainers[i].querySelector('input[name=question'+i+']:checked')||{}).value;
-            
+
              //for 4th question
-        
+
         if (i=questions.length-1){ //on question 4
             	if(userAnswer=='a'){
             		window.open("https://www.riseagainsthunger.org/how-we-work/nourishing-lives/");
-            	
+
             	}
-            	
+
             	else if(userAnswer=='b'){
             		window.open("https://www.riseagainsthunger.org/how-we-work/responding-to-crisis/");
-            	
+
             	}
             	else if(userAnswer=='c'){
             		window.open("https://www.riseagainsthunger.org/how-we-work/empowering-communities/");
-            	
+
             	}
             	else if(userAnswer=='d'){
             		window.open("https://www.riseagainsthunger.org/take-action/");
-            	
+
             	}
-            
-            
+
+
             } //end of last question check
-            
-           
-       
+
+
+
             // if answer is correct
             if(userAnswer===questions[i].correctAnswer){
                 // add to the number of correct answers
                 numCorrect++;
-                
+
                 // color the answers green
                 answerContainers[i].style.color = 'lightgreen';
             }
-            
+
             // if answer is wrong or blank
             else{
                 // color the answers red
@@ -158,33 +153,10 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
 
     // show questions asap
     showQuestions(questions, quizContainer);
-    
+
     // on submit, show results
     submitButton.onclick = function(){
         showResults(questions, quizContainer, resultsContainer);
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		
-		
-
-
-
-
-
-
