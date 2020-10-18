@@ -18,6 +18,21 @@ outline:white;
   width: 1200px;
 }
 
+.score {
+  font-size: 80px;
+  font-family: Noto-Serif;
+}
+
+.rectangle {
+  width: 1105px;
+  height: 804px;
+  background: #455CC7;
+  border: 1px solid #455CC7;
+  opacity: 0.9;
+  margin: auto;
+  border-radius: 10px;
+}
+
 h1 {
   font-family: Nunito;
   font-style: normal;
@@ -81,7 +96,7 @@ a:visited {
 
 /* mouse over link */
 a:hover {
-  color: #455cc7;
+  color: white;
   font-family: Nunito;
   font-style: normal;
   font-weight: bold;
