@@ -19,9 +19,9 @@
 
 <?php
   /*
-   Plugin Name: sadness
+   Plugin Name: Radio Quiz
    Plugin URI:
-   description: >-
+   description: Radio Button Working Survey
    Embedded ‘Quiz’ that can be sent to volunteers/donors via q2 to help us send tailored content.
    Version: 1.0
    Author: Fake ECE bros
@@ -143,6 +143,6 @@
     	return ob_get_clean();
     }
 
-    add_shortcode( 'sitepoint_contact_form', 'cf_shortcode' );
+    add_shortcode( 'radio_quiz', 'cf_shortcode' );
 
 ?>
