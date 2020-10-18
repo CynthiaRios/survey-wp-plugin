@@ -29,7 +29,8 @@ body{
     line-height: 30px;
 }
 #submit{
-    font-family: sans-serif;
+    font-family: Nunito;
+    font-weight: bold;
     font-size: 20px;
     background-color: #e32726;
     color: #fff;
