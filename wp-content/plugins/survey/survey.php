@@ -109,6 +109,11 @@
       print "Your score is $correct/3.<br/><br/>";
       print 'The correct answers: (1) Cairo&nbsp;&nbsp; (2) Tegucigalpa&nbsp;&nbsp; (3) Phnom Penh';
       }
+      echo '<p>';
+    	echo 'Your Email (required) <br/>';
+    	echo '<input type="email" name="cf-email" value="' . ( isset( $_POST["cf-email"] ) ? esc_attr( $_POST["cf-email"] ) : '' ) . '" size="40" />';
+    	echo '</p>';
+      echo '<p><input type="submit" name="cf-submitted" value="Send"></p>';
       print '</form>';
       }
 
