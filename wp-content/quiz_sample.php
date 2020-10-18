@@ -15,7 +15,7 @@ print '<p>(1) How many people in the world are considered food insecure?</p>';
 if ($_POST['answer2']=="a"){
 print '<p><input type="radio" checked="checked" name="answer2" value="a"/>820 Million<br/>';
 $correct++;
-print '<p>Correct!</p>';
+print '&nbsp;&nbspCorrect!';
 }
 else
 print '<p><input type="radio" name="answer2" value="a"/>820 Million<br/>';
@@ -43,7 +43,7 @@ print '<input type="radio" name="answer3" value="a"/>35%<br/>';
 if ($_POST['answer3']=="b"){
 print '<input type="radio" checked="checked" name="answer3" value="b"/>60%<br>';
 $correct++;
-print '<p>Correct!</p>';
+print '&nbsp;&nbspCorrect!';
 }
 else
 print '<input type="radio" name="answer3" value="b"/>60%<br/>';
@@ -73,7 +73,7 @@ print '<input type="radio" name="answer1" value="b"/>800,000<br/>';
 if ($_POST['answer1']=="c") {
 print '<input type="radio" checked="checked" name="answer1" value="c"/>1.3 Billion<br/>';
 $correct++;
-print '<p>Correct!</p>';
+print '&nbsp;&nbspCorrect!';
 }
 else
 print '<input type="radio" name="answer1" value="c"/>1.3 Billion<br/>';
@@ -111,12 +111,12 @@ $done++;
 
 if ($done !=5)
 print '<input type="submit" name="submit" value="check answers" /><br/><br/>';
+
 if (($done > 0)&&($done < 5))
 print 'You haven&#8217;t answered all the questions. Please finish the quiz and re-submit your answers.';
 if($done==5){
 if ($correct==0)
 $correct="0";
-print "Your score is $correct/3.<br/><br/>";
 print 'The correct answers: (1) 820 Million&nbsp;&nbsp; (2) 60%&nbsp;&nbsp; (3) 1.3 Billion';
 }
 print '</form>';
