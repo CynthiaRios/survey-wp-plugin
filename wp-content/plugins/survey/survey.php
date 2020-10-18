@@ -1,9 +1,9 @@
 <?php
    /*
-   Plugin Name: Survey 2
+   Plugin Name: Survey Responses 3
    Plugin URI:
    description: >-
-   Embedded ‘Quiz’ that can be sent to volunteers/donors via email to help us send tailored content.
+   Embedded ‘Quiz’ that can be sent to volunteers/donors via q2 to help us send tailored content.
    Version: 1.0
    Author: Fake ECE bros
    Author URI:
@@ -12,157 +12,89 @@
    add_action( 'EWB Ending World Hunger','html_form_code');
    add_action( __FILE__,'html_form_code');
    function html_form_code() {
+    	echo '<form action="' . esc_url( $_SERVER['REQUEST_URI'] ) . '" method="post">';
+      echo '<p>';
+	   	echo '(1) How many people in the world are considered food insecure? <br/>';
+    	echo '<input type="text" name="cf-q1" pattern="[a-zA-Z0-9 ]+" value="' . ( isset( $_POST["cf-q1"] ) ? esc_attr( $_POST["cf-q1"] ) : '' ) . '" size="40" />';
+    	echo '</p>';
+      echo '<p>';
+	   	echo '(2) What percent of those facing hunger are women and girls? <br/>';
+    	echo '<input type="text" name="cf-q2" pattern="[a-zA-Z0-9 ]+" value="' . ( isset( $_POST["cf-q2"] ) ? esc_attr( $_POST["cf-q2"] ) : '' ) . '" size="40" />';
+    	echo '</p>';
+      echo '<p>';
+	   	echo '(3) On average, how many tons of food is wasted around the world annually? <br/>';
+    	echo '<input type="text" name="cf-q3" pattern="[a-zA-Z0-9 ]+" value="' . ( isset( $_POST["cf-q3"] ) ? esc_attr( $_POST["cf-q3"] ) : '' ) . '" size="40" />';
+    	echo '</p>';
+      echo '<p>';
+	   	echo '(4) What Pathway to End Hunger are you most interested in learning more about? <br/>';
+    	echo '<input type="text" name="cf-q4" pattern="[a-zA-Z0-9 ]+" value="' . ( isset( $_POST["cf-q4"] ) ? esc_attr( $_POST["cf-q4"] ) : '' ) . '" size="40" />';
+    	echo '</p>';
+    	echo '<p><input type="submit" name="cf-submitted" value="Send"></p>';
+    	echo '</form>';
+    }
 
-     //BEGINNING OF QUESTION ONE
-     print '<p>(1) How many people in the world are considered food insecure?</p>';
-     if ($_POST['answer2']=="a"){
-     print '<p><input type="radio" checked="checked" name="answer2" value="a"/>820 Million<br/>';
-     $correct++;
-     echo "Correct! <br>";
-     }
-     else
-     print '<p><input type="radio" name="answer2" value="a"/>820 Million<br/>';
-     if ($_POST['answer2']=="b")
-     print '<input type="radio" checked="checked" name="answer2" value="b"/>375 Million<br/>';
-     else
-     print '<input type="radio" name="answer2" value="b"/>375 Million<br/>';
-     if ($_POST['answer2']=="c")
-     print '<input type="radio" checked="checked" name="answer2" value="c"/>947 Million<br/>';
-     else
-     print '<input type="radio" name="answer2" value="c"/>947 Million<br/>';
-     if ($_POST['answer2']=="d")
-     print '<input type="radio" checked="checked" name="answer2" value="d"/>50  Million<br/>';
-     else
-     print '<input type="radio" name="answer2" value="d"/>50  Million<br/><br/></p>';
+    function deliver_results() {
 
-
-
-     //QUESTION 2
-     print '<p>(2) What percent of those facing hunger are women and girls?</p>';
-     if ($_POST['answer3']=="a")
-     print '<input type="radio" checked="checked" name="answer3" value="a"/>35%<br/>';
-     else
-     print '<input type="radio" name="answer3" value="a"/>35%<br/>';
-     if ($_POST['answer3']=="b"){
-     print '<input type="radio" checked="checked" name="answer3" value="b"/>60%<br>';
-     $correct++;
-     echo "Correct! <br>";
-     }
-     else
-     print '<input type="radio" name="answer3" value="b"/>60%<br/>';
-     if ($_POST['answer3']=="c")
-     print '<input type="radio" checked="checked" name="answer3" value="c"/>73%<br/>';
-     else
-     print '<input type="radio" name="answer3" value="c"/>73%<br/>';
-     if ($_POST['answer3']=="d")
-     print '<input type="radio" checked="checked" name="answer3" value="d"/>52%<br/><br/>';
-     else
-     print '<input type="radio" name="answer3" value="d"/>52%<br/><br/>';
+    	// if the submit button is clicked, send the q2
+    	if ( isset( $_POST['cf-submitted'] ) ) {
+        $q1    = sanitize_text_field( $_POST["cf-q1"] );
+        $q2    = sanitize_text_field( $_POST["cf-q2"] );
+        $q3    = sanitize_text_field( $_POST["cf-q3"] );
+        $q4    = sanitize_text_field( $_POST["cf-q4"] );
 
 
+    		// If q2 has been process for sending, display a success q4
+        if ($q1=='a'){
+          echo '<div>';
+          echo 'Correct';
+          echo '</div>';
+        }
+        else{
+          echo '<div>';
+          echo 'Incorrect';
+          echo '</div>';
+        }
+        if ($q2=='a'){
+          echo '<div>';
+          echo 'Correct';
+          echo '</div>';
+        }
+        else{
+          echo '<div>';
+          echo 'Incorrect';
+          echo '</div>';
+        }
+        if ($q3=='a'){
+          echo '<div>';
+          echo 'Correct';
+          echo '</div>';
+        }
+        else{
+          echo '<div>';
+          echo 'Incorrect';
+          echo '</div>';
+        }
+        if ($q4=='a'){
+          echo '<div>';
+          echo 'Correct';
+          echo '</div>';
+        }
+        else{
+          echo '<div>';
+          echo 'Incorrect';
+          echo '</div>';
+        }
+    	}
+    }
 
-     //QUESTION 3
-     print '<p>(3) On average, how many tons of food is wasted around the world annually?</p>';
-     if ($_POST['answer1']=="a")
-     print '<input type="radio" checked="checked" name="answer1" value="a"/>730 Million<br/>';
-     else
-     print '<p><input type="radio" name="answer1" value="a"/>730 Million<br/>';
-     if ($_POST['answer1']=="b")
-     print '<input type="radio" checked="checked" name="answer1" value="b"/>800,000<br/>';
-     else
-     print '<input type="radio" name="answer1" value="b"/>800,000<br/>';
-     if ($_POST['answer1']=="c") {
-     print '<input type="radio" checked="checked" name="answer1" value="c"/>1.3 Billion<br/>';
-     $correct++;
-     echo "Correct! <br>";
-     }
-     else
-     print '<input type="radio" name="answer1" value="c"/>1.3 Billion<br/>';
-     if ($_POST['answer1']=="d"){
-     print '<input type="radio" checked="checked" name="answer1" value="d"/>250 Million<br/>';
-     }
-     else
-     print '<input type="radio" name="answer1" value="d"/>250 Million<br/></p>';
+    function cf_shortcode() {
+    	ob_start();
+    	deliver_results();
+    	html_form_code();
 
+    	return ob_get_clean();
+    }
 
-     //QUESTION 4
-     print '<p>(4) What Pathway to End Hunger are you most interested in learning more about?</p>';
-     if ($_POST['answer4']=="a")
-     print '<input type="radio" checked="checked" name="answer4" value="a"/>Nourishing Lives<br/>';
-     else
-     print '<input type="radio" name="answer4" value="a"/>Nourishing Lives<br/>';
-     if ($_POST['answer4']=="b")
-     print '<input type="radio" checked="checked" name="answer4" value="b"/>Empowering Communities<br>';
-     else
-     print '<input type="radio" name="answer4" value="b"/>Empowering Communities<br/>';
-     if ($_POST['answer4']=="c")
-     print '<input type="radio" checked="checked" name="answer4" value="c"/>Responding to Emergencies<br/>';
-     else
-     print '<input type="radio" name="answer4" value="c"/>Responding to Emergencies<br/>';
-     if ($_POST['answer4']=="d")
-     print '<input type="radio" checked="checked" name="answer4" value="d"/>Growing the Movement<br/><br/>';
-     else
-     print '<input type="radio" name="answer4" value="d"/>Growing the Movement<br/><br/>';
-
-     foreach ($_POST as $value){
-     if (isset ($value)){
-     $done++;
-     }
-     }
-
-     if ($done !=5)
-     print '<input type="submit" name="submit" value="check answers" /><br/><br/>';
-
-     if (($done > 0)&&($done < 5))
-     print 'You haven&#8217;t answered all the questions. Please finish the quiz and re-submit your answers.';
-     if($done==5){
-     if ($correct==0)
-     $correct="0";
-     echo '<h2>You have reached the end of the quiz.</h2>';
-     }
-     // echo '<p>';
-    //	echo 'Your Email (required) <br/>';
-    //	echo '<input type="email" name="cf-email" value="' . ( isset( $_POST["cf-email"] ) ? esc_attr( $_POST["cf-email"] ) : '' ) . '" size="40" />';
-    //	echo '</p>';
-     // echo '<p><input type="submit" name="cf-submitted" value="Send"></p>';
-      print '</form>';
-      }
-
-      function deliver_mail() {
-
-      	// if the submit button is clicked, send the email
-      	if ( isset( $_POST['cf-submitted'] ) ) {
-
-      		// sanitize form values
-      		$name    = sanitize_text_field( $_POST["cf-name"] );
-      		$email   = sanitize_email( $_POST["cf-email"] );
-      		$subject = sanitize_text_field( $_POST["cf-subject"] );
-      		$message = esc_textarea( $_POST["cf-message"] );
-
-      		// get the blog administrator's email address
-      		$to = get_option( 'admin_email' );
-
-      		$headers = "From: $name <$email>" . "\r\n";
-
-      		// If email has been process for sending, display a success message
-      		if ( wp_mail( $to, $subject, $message, $headers ) ) {
-      			echo '<div>';
-      			echo '<p>Thanks for contacting me, expect a response soon.</p>';
-      			echo '</div>';
-      		} else {
-      			echo 'An unexpected error occurred';
-      		}
-      	}
-      }
-
-      function cf_shortcode() {
-      	ob_start();
-      	deliver_mail();
-      	html_form_code();
-
-      	return ob_get_clean();
-      }
-
-      add_shortcode( 'sitepoint_contact_form', 'cf_shortcode' );
+    add_shortcode( 'sitepoint_contact_form', 'cf_shortcode' );
 
 ?>
