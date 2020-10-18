@@ -7,7 +7,8 @@ button {
 width: 435px;
 margin: 10px;
 height: 92px;
-position: relative;
+margin-left: auto;
+margin-right: auto;
 background: #E32726;
 border-radius: 50px;
 
@@ -26,31 +27,13 @@ h1 {
 
 }
 
-h2 {
-  position: absolute;
-  width: 223px;
-  height: 60px;
-  left: 571px;
-  top: 634px;
-
-  font-family: Nunito;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 48px;
-  line-height: 60px;
-  /* identical to box height */
-
-  text-align: center;
-
-  color: #FFFFFF;
-}
-
 h3 {
   color: white;
   font-family: Nunito;
   font-style: normal;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 45px;
+  margin: 10px;
 }
 
 img {
@@ -73,13 +56,6 @@ img {
  top: 50%;
  left: 50%;
  transform: translate(-50%, -50%);
-}
-
-.Absolute-Center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
 }
 
 /* unvisited link */
