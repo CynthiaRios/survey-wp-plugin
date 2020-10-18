@@ -4,18 +4,16 @@ body {
 
 
 button {
-position: absolute;
 width: 435px;
+margin: 10px;
 height: 92px;
-left: 502px;
-top: 618px;
-
+position: relative;
 background: #E32726;
 border-radius: 50px;
+
 }
 
 h1 {
-
   font-family: Nunito;
   font-style: normal;
   font-weight: bold;
@@ -47,6 +45,14 @@ h2 {
   color: #FFFFFF;
 }
 
+h3 {
+  color: white;
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+}
+
 img {
   text-align:center;
   width:30%;
@@ -54,17 +60,6 @@ img {
   margin:auto;
 }
 
-button {
-  width: 435px;
-  margin: auto;
-  height: 92px;
-  top: 50%;
-  left: 50%;
-  text-align: center;
-  position: relative;
-  background: #E32726;
-  border-radius: 50px;
-}
 
 .container {
   position: relative;
