@@ -1,12 +1,6 @@
-//HTML Codes 
-<div id="quiz"></div>
-<button id="submit">Get Results</button>
-<div id="results"></div>
-
-
 var myQuestions = [
     {
-        question: "How many people in the world are considered food insecure",
+        question: "How many people in the world are considered food insecure?",
         answers: {
             a: "820 Million",
             b: "375 Million",
@@ -15,7 +9,7 @@ var myQuestions = [
         },
         correctAnswer: 'a'
         },
-        
+
         {
         question: "What percent of those facing hunger are women and girls?",
         answers: {
@@ -26,7 +20,7 @@ var myQuestions = [
         },
         correctAnswer: 'b'
         },
-        
+
           {
         question: "On average, how many tons of food is wasted around the world annually?",
         answers: {
@@ -37,7 +31,7 @@ var myQuestions = [
         },
         correctAnswer: 'c'
         },
-        
+
          {
         question: "What Pathway to End Hunger are you most interested in learning more about?",
         answers: {
@@ -46,7 +40,7 @@ var myQuestions = [
             c: "Responding to Emergencies",
             d: "Growing the Movement"
         },
-        
+
         },
 ];
 
@@ -65,7 +59,7 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
 
         // for each question...
         for(var i=0; i<questions.length; i++){
-            
+
             // first reset the list of answers
             answers = [];
 
@@ -95,25 +89,25 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
 
 
     function showResults(questions, quizContainer, resultsContainer){
-        
+
         // gather answer containers from our quiz
         var answerContainers = quizContainer.querySelectorAll('.answers');
-        
+
         // keep track of user's answers
         var userAnswer = '';
         var numCorrect = 0;
-        
+
         // for each question...
         for(var i=0; i<questions.length; i++){
 
             // find selected answer
             userAnswer = (answerContainers[i].querySelector('input[name=question'+i+']:checked')||{}).value;
-            
+
             // if answer is correct
             if(userAnswer===questions[i].correctAnswer){
                 // add to the number of correct answers
                 numCorrect++;
-                
+
                 // color the answers green
                 answerContainers[i].style.color = 'lightgreen';
             }
@@ -130,27 +124,10 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
 
     // show questions right away
     showQuestions(questions, quizContainer);
-    
+
     // on submit, show results
     submitButton.onclick = function(){
         showResults(questions, quizContainer, resultsContainer);
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		
-		
