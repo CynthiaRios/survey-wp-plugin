@@ -1,0 +1,124 @@
+body {
+  background-color: #ffffff;
+}
+
+
+button {
+position: absolute;
+width: 435px;
+height: 92px;
+left: 502px;
+top: 618px;
+
+background: #E32726;
+border-radius: 50px;
+}
+
+h1 {
+
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 60px;
+  text-align: center;
+  border-radius: 50px;
+
+  color: #000000;
+
+}
+
+h2 {
+  position: absolute;
+  width: 223px;
+  height: 60px;
+  left: 571px;
+  top: 634px;
+
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 60px;
+  /* identical to box height */
+
+  text-align: center;
+
+  color: #FFFFFF;
+}
+
+img {
+  text-align:center;
+  width:30%;
+  display:block;
+  margin:auto;
+}
+
+button {
+  width: 435px;
+  margin: auto;
+  height: 92px;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  position: relative;
+  background: #E32726;
+  border-radius: 50px;
+}
+
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+/* Centered text */
+.centered {
+ position: fixed;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+}
+
+.Absolute-Center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* unvisited link */
+a:link {
+  color: white;
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+}
+
+/* visited link */
+a:visited {
+  color: white;
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+}
+
+/* mouse over link */
+a:hover {
+  color: #455cc7;
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+}
+
+/* selected link */
+a:active {
+  color: #fcb614;
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+}
