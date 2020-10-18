@@ -1,6 +1,6 @@
 <?php
    /*
-   Plugin Name: Hunger Survey
+   Plugin Name: Survey 2
    Plugin URI:
    description: >-
    Embedded ‘Quiz’ that can be sent to volunteers/donors via email to help us send tailored content.
@@ -12,12 +12,13 @@
    add_action( 'EWB Ending World Hunger','html_form_code');
    add_action( __FILE__,'html_form_code');
    function html_form_code() {
+
      //BEGINNING OF QUESTION ONE
      print '<p>(1) How many people in the world are considered food insecure?</p>';
      if ($_POST['answer2']=="a"){
      print '<p><input type="radio" checked="checked" name="answer2" value="a"/>820 Million<br/>';
      $correct++;
-     print '&nbsp;&nbspCorrect!';
+     echo "Correct! <br>";
      }
      else
      print '<p><input type="radio" name="answer2" value="a"/>820 Million<br/>';
@@ -45,7 +46,7 @@
      if ($_POST['answer3']=="b"){
      print '<input type="radio" checked="checked" name="answer3" value="b"/>60%<br>';
      $correct++;
-     print '&nbsp;&nbspCorrect!';
+     echo "Correct! <br>";
      }
      else
      print '<input type="radio" name="answer3" value="b"/>60%<br/>';
@@ -61,8 +62,6 @@
 
 
      //QUESTION 3
-     print '<form action="display_code_2.php" method="post">';
-     //BEGINNING OF QUESTION TWO
      print '<p>(3) On average, how many tons of food is wasted around the world annually?</p>';
      if ($_POST['answer1']=="a")
      print '<input type="radio" checked="checked" name="answer1" value="a"/>730 Million<br/>';
@@ -75,7 +74,7 @@
      if ($_POST['answer1']=="c") {
      print '<input type="radio" checked="checked" name="answer1" value="c"/>1.3 Billion<br/>';
      $correct++;
-     print '&nbsp;&nbspCorrect!';
+     echo "Correct! <br>";
      }
      else
      print '<input type="radio" name="answer1" value="c"/>1.3 Billion<br/>';
@@ -119,13 +118,16 @@
      if($done==5){
      if ($correct==0)
      $correct="0";
-     print 'The correct answers: (1) 820 Million&nbsp;&nbsp; (2) 60%&nbsp;&nbsp; (3) 1.3 Billion';
+     echo '<h2>You have reached the end of the quiz.</h2>';
      }
-     echo '<input type="email" name="cf-email" value="' . ( isset( $_POST["cf-email"] ) ? esc_attr( $_POST["cf-email"] ) : '' ) . '" size="40" />';
-     echo '</p>';
-     echo '<p><input type="submit" name="cf-submitted" value="Send"></p>';
-     }
-     print '</form>';
+     // echo '<p>';
+    //	echo 'Your Email (required) <br/>';
+    //	echo '<input type="email" name="cf-email" value="' . ( isset( $_POST["cf-email"] ) ? esc_attr( $_POST["cf-email"] ) : '' ) . '" size="40" />';
+    //	echo '</p>';
+     // echo '<p><input type="submit" name="cf-submitted" value="Send"></p>';
+      print '</form>';
+      }
+
       function deliver_mail() {
 
       	// if the submit button is clicked, send the email
