@@ -15,19 +15,31 @@
     	echo '<form action="' . esc_url( $_SERVER['REQUEST_URI'] ) . '" method="post">';
       echo '<p>';
 	   	echo '(1) How many people in the world are considered food insecure? <br/>';
-    	echo '<input type="text" name="cf-q1" pattern="[a-zA-Z0-9 ]+" value="' . ( isset( $_POST["cf-q1"] ) ? esc_attr( $_POST["cf-q1"] ) : '' ) . '" size="40" />';
+    	echo '<input type="radio" name="cf-q1" pattern="[a-zA-Z0-9 ]+" value="a' . ( isset( $_POST["cf-q1"] ) ? esc_attr( $_POST["cf-q1"] ) : '' ) . '" size="40" />820 Million<br/>';
+      echo '<input type="radio" name="cf-q1" pattern="[a-zA-Z0-9 ]+" value="b' . ( isset( $_POST["cf-q1"] ) ? esc_attr( $_POST["cf-q1"] ) : '' ) . '" size="40" />375 Million<br/>';
+      echo '<input type="radio" name="cf-q1" pattern="[a-zA-Z0-9 ]+" value="c' . ( isset( $_POST["cf-q1"] ) ? esc_attr( $_POST["cf-q1"] ) : '' ) . '" size="40" />947 Million<br/>';
+      echo '<input type="radio" name="cf-q1" pattern="[a-zA-Z0-9 ]+" value="d' . ( isset( $_POST["cf-q1"] ) ? esc_attr( $_POST["cf-q1"] ) : '' ) . '" size="40" />50  Million<br/>';
     	echo '</p>';
       echo '<p>';
 	   	echo '(2) What percent of those facing hunger are women and girls? <br/>';
-    	echo '<input type="text" name="cf-q2" pattern="[a-zA-Z0-9 ]+" value="' . ( isset( $_POST["cf-q2"] ) ? esc_attr( $_POST["cf-q2"] ) : '' ) . '" size="40" />';
+    	echo '<input type="radio" name="cf-q2" pattern="[a-zA-Z0-9 ]+" value="a' . ( isset( $_POST["cf-q2"] ) ? esc_attr( $_POST["cf-q2"] ) : '' ) . '" size="40" />35%<br/>';
+      echo '<input type="radio" name="cf-q2" pattern="[a-zA-Z0-9 ]+" value="b' . ( isset( $_POST["cf-q2"] ) ? esc_attr( $_POST["cf-q2"] ) : '' ) . '" size="40" />60%<br/>';
+      echo '<input type="radio" name="cf-q2" pattern="[a-zA-Z0-9 ]+" value="c' . ( isset( $_POST["cf-q2"] ) ? esc_attr( $_POST["cf-q2"] ) : '' ) . '" size="40" />73%<br/>';
+      echo '<input type="radio" name="cf-q2" pattern="[a-zA-Z0-9 ]+" value="d' . ( isset( $_POST["cf-q2"] ) ? esc_attr( $_POST["cf-q2"] ) : '' ) . '" size="40" />52%<br/>';
     	echo '</p>';
       echo '<p>';
 	   	echo '(3) On average, how many tons of food is wasted around the world annually? <br/>';
-    	echo '<input type="text" name="cf-q3" pattern="[a-zA-Z0-9 ]+" value="' . ( isset( $_POST["cf-q3"] ) ? esc_attr( $_POST["cf-q3"] ) : '' ) . '" size="40" />';
+    	echo '<input type="radio" name="cf-q3" pattern="[a-zA-Z0-9 ]+" value="a' . ( isset( $_POST["cf-q3"] ) ? esc_attr( $_POST["cf-q3"] ) : '' ) . '" size="40" />730 Million<br/>';
+      echo '<input type="radio" name="cf-q3" pattern="[a-zA-Z0-9 ]+" value="b' . ( isset( $_POST["cf-q3"] ) ? esc_attr( $_POST["cf-q3"] ) : '' ) . '" size="40" />800,000<br/>';
+      echo '<input type="radio" name="cf-q3" pattern="[a-zA-Z0-9 ]+" value="c' . ( isset( $_POST["cf-q3"] ) ? esc_attr( $_POST["cf-q3"] ) : '' ) . '" size="40" />1.3 Billion<br/>';
+      echo '<input type="radio" name="cf-q3" pattern="[a-zA-Z0-9 ]+" value="d' . ( isset( $_POST["cf-q3"] ) ? esc_attr( $_POST["cf-q3"] ) : '' ) . '" size="40" />250 Million<br/>';
     	echo '</p>';
       echo '<p>';
 	   	echo '(4) What Pathway to End Hunger are you most interested in learning more about? <br/>';
-    	echo '<input type="text" name="cf-q4" pattern="[a-zA-Z0-9 ]+" value="' . ( isset( $_POST["cf-q4"] ) ? esc_attr( $_POST["cf-q4"] ) : '' ) . '" size="40" />';
+    	echo '<input type="radio" name="cf-q4" pattern="[a-zA-Z0-9 ]+" value="a' . ( isset( $_POST["cf-q4"] ) ? esc_attr( $_POST["cf-q4"] ) : '' ) . '" size="40" />Nourishing Lives<br/>';
+      echo '<input type="radio" name="cf-q4" pattern="[a-zA-Z0-9 ]+" value="b' . ( isset( $_POST["cf-q4"] ) ? esc_attr( $_POST["cf-q4"] ) : '' ) . '" size="40" />Empowering Communities<br/>';
+      echo '<input type="radio" name="cf-q4" pattern="[a-zA-Z0-9 ]+" value="c' . ( isset( $_POST["cf-q4"] ) ? esc_attr( $_POST["cf-q4"] ) : '' ) . '" size="40" />Responding to Emergencies<br/>';
+      echo '<input type="radio" name="cf-q4" pattern="[a-zA-Z0-9 ]+" value="d' . ( isset( $_POST["cf-q4"] ) ? esc_attr( $_POST["cf-q4"] ) : '' ) . '" size="40" />Growing the Movement<br/>';
     	echo '</p>';
     	echo '<p><input type="submit" name="cf-submitted" value="Send"></p>';
     	echo '</form>';
@@ -54,7 +66,7 @@
           echo 'Incorrect';
           echo '</div>';
         }
-        if ($q2=='a'){
+        if ($q2=='b'){
           echo '<div>';
           echo 'Correct';
           echo '</div>';
@@ -64,7 +76,7 @@
           echo 'Incorrect';
           echo '</div>';
         }
-        if ($q3=='a'){
+        if ($q3=='c'){
           echo '<div>';
           echo 'Correct';
           echo '</div>';
@@ -74,7 +86,7 @@
           echo 'Incorrect';
           echo '</div>';
         }
-        if ($q4=='a'){
+        if ($q4=='d'){
           echo '<div>';
           echo 'Correct';
           echo '</div>';
@@ -89,8 +101,8 @@
 
     function cf_shortcode() {
     	ob_start();
-    	deliver_results();
     	html_form_code();
+		deliver_results();
 
     	return ob_get_clean();
     }
